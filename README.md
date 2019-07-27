@@ -1,1 +1,5 @@
-Holberton School group project - Printf. Partner:joshuaciencia
+Holberton School group project - Printf.
+Write your own printf function.
+
+@mrdoomus
+@joshuaciencia
