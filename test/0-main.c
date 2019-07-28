@@ -9,9 +9,14 @@
  */
 int main(void)
 {
-	_printf("Let's try to printf a %% simple sentence.\n");
-	_printf("This is a test %z.\n");
-	printf("Let's try to printf a %% simple sentence.\n");
-	printf("This is a test %z.\n");
+	/**_printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');
+	printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');**/
+
+	int n = _printf("Testing:%c\n");
+	int m = printf("Testing:%c\n");
+
+	printf("%d, %d\n", n, m);
+
 	return (0);
+
 }
