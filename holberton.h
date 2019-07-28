@@ -5,4 +5,5 @@ int _putchar(const char c);
 int _strlen(const char *s);
 void _puts(const char *str);
 int _numlen(int n);
+void _printd(int n);
 #endif

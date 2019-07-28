@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	unsigned int count = 0, printed = 0;
+	unsigned int count = 0, printed = 0, num = 0;
 	char *s;
 
 	va_start(list, format);
@@ -33,7 +33,16 @@ int _printf(const char *format, ...)
 						printed += _strlen(s);
 						_puts(s);
 					}
-
+					break;
+				case 'd':
+					num = va_arg(list, int);
+					_printd(num);
+					printed += _numlen(num);
+					break;
+				case 'i':
+					num = va_arg(list, int);
+					_printd(num);
+					printed += _numlen(num);
 					break;
 				default:
 					_putchar('%');
