@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 	char *s;
 
 	va_start(list, format);
-
 	while (format && format[count])
 	{
 		if (format[count] == '%' && format[count + 1])
@@ -21,26 +20,30 @@ int _printf(const char *format, ...)
 			{
 				case '%':
 					_putchar(format[count + 1]);
+					printed += 1;
 					break;
 				case 'c':
 					_putchar(va_arg(list, int));
+					printed += 1;
 					break;
 				case 's':
 					s = va_arg(list, char *);
-					_puts(s);
+					if (s)
+					{
+						printed += _strlen(s);
+						_puts(s);
+					}
+
 					break;
 				default:
 					_putchar('%');
-					break;
-			}
-			printed += 1;
-			count += 2;
+			} count += 2;
 		}
 		else
 		{
 			_putchar(format[count]);
-			printed++;
-			count++;
+			printed += 1;
+			count += 1;
 		}
 	}
 	return (printed);
