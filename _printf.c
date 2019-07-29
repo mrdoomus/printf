@@ -93,11 +93,7 @@ void format_1(va_list list, int *printed)
 	int num = va_arg(list, int);
 
 	if (num <= 0)
-	{
-		_putchar('-');
 		*printed += 1;
-	}
 	_printd(num);
 	*printed += _numlen(num);
-
 }
