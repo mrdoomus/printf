@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	unsigned int count = 0, printed = 0, num = 0;
+	int count = 0, printed = 0, num = 0;
 	char *s;
 
 	if (!format)
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		if (format[count] == '%')
 		{
 			if (format[count + 1] == '\0')
-				return - 1;
+				return (-1);
 
 			switch (format[count + 1])
 			{
@@ -43,16 +43,19 @@ int _printf(const char *format, ...)
 					{
 						printed += _strlen("(null)");
 						_puts("(null)");
-						
 					}
 					break;
 				case 'd':
 					num = va_arg(list, int);
+					if (num < 0)
+						printed += 1;
 					_printd(num);
 					printed += _numlen(num);
 					break;
 				case 'i':
 					num = va_arg(list, int);
+					if (num < 0)
+						printed += 1;
 					_printd(num);
 					printed += _numlen(num);
 					break;
