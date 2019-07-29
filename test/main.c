@@ -13,8 +13,8 @@ int main(void)
 	/**_printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');
 	printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');**/
 
-	int n = _printf("%d\n", INT_MIN);
-	int m = printf("%d\n", INT_MIN);
+	int n = _printf("%d %d %d \n", -100, 100, INT_MIN);
+	int m = printf("%d %d %d \n", -100, 100, INT_MIN);
 
 	printf("%d, %d\n", n, m);
 
