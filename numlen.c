@@ -4,7 +4,7 @@
  * @n: Passed number.
  * Return: Returns teh number of digits of a number.
 **/
-int _numlen(int n) 
+int _numlen(int n)
 {
 int cnt = 0;
 
