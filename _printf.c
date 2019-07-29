@@ -45,7 +45,10 @@ int _printf(const char *format, ...)
 					printed += _numlen(num);
 					break;
 				default:
+					count += 1;
+					printed += 1;
 					_putchar('%');
+					continue;
 			} count += 2;
 		}
 		else
