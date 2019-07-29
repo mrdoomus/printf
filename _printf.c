@@ -36,6 +36,12 @@ int _printf(const char *format, ...)
 						printed += _strlen(s);
 						_puts(s);
 					}
+					else
+					{
+						printed += _strlen("(null)");
+						_puts("(null)");
+						
+					}
 					break;
 				case 'd':
 					num = va_arg(list, int);

@@ -1,5 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
+#include <limits.h>
 #include "../holberton.h"
 
 /**
@@ -12,8 +13,8 @@ int main(void)
 	/**_printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');
 	printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');**/
 
-	int n = _printf("Testing:%s\n", 100);
-	int m = printf("Testing:%s\n", 100);
+	int n = _printf("%s\n", NULL);
+	int m = printf("%s\n", NULL);
 
 	printf("%d, %d\n", n, m);
 
