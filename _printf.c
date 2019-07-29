@@ -14,8 +14,11 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (format && format[count])
 	{
-		if (format[count] == '%' && format[count + 1])
+		if (format[count] == '%')
 		{
+			if (format[count + 1] == '\0')
+				return - 1;
+
 			switch (format[count + 1])
 			{
 				case '%':
