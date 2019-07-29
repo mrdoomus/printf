@@ -55,5 +55,6 @@ int _printf(const char *format, ...)
 			count += 1;
 		}
 	}
+	va_end(list);
 	return (printed);
 }
