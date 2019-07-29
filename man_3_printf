@@ -1,0 +1,37 @@
+.TH man 1 "29 Jul 2019" "0.01" "_printf man page"
+.SH NAME
+.B _printf
+- Alternative formated output conversion.
+.SH SYNOPSIS
+Student project for HolbertonSchool
+.SH DESCRIPTION
+Format and print data.
+Write the formatted arguments to the standard output under the control of the format.
+.SH SYNTAX
+.B _printf
+.br
+_printf format [argument]
+.SH CONVERSION
+.B d, i
+.br
+The int argument is converted to signed decimal notation.  The precision, if any, gives the minimum number of digits that must appear; if the converted value requires fewer digits, it is padded on the left with zeros.
+
+.B c
+.br
+If no l modifier is present, the int argument is converted to an unsigned char, and the resulting character is written.
+
+.B s
+.br
+If no l modifier is present: the const char * argument is expected to be a pointer to an array of character type (pointer to a string).  Characters from the array are written up to (but not including) a terminating null byte ('\0').
+
+.B %
+.br
+A '%' is written.  No argument is converted.  The complete conversion specification is '%%'.
+.SH SEE ALSO
+printf(1), holbertonschool(2), cprogramming(2).
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Joshua Hernández - joshuaciencia
+.br
+Camilo Villegas - DOOM
