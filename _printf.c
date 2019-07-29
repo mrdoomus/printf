@@ -11,6 +11,9 @@ int _printf(const char *format, ...)
 	unsigned int count = 0, printed = 0, num = 0;
 	char *s;
 
+	if (!format)
+		return (-1);
+
 	va_start(list, format);
 	while (format && format[count])
 	{
