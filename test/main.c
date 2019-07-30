@@ -13,8 +13,8 @@ int main(void)
 	/**_printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');
 	printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');**/
 
-	int n = _printf("%s, %i\n", "Strings still work", 100);
-	int m = printf("%s, %d\n", "Strings still work", 200);
+	int n = _printf("%b\n", 7);
+	int m = printf("a\n");
 
 	printf("%d, %d\n", n, m);
 
