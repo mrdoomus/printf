@@ -55,7 +55,7 @@ void format_values(va_list list, const char *format, int *printed, int *count)
 			*printed += 1;
 			break;
 		case 's':
-			format_string(list, printed);
+			format_string(list, printed, 's');
 			break;
 		case 'd': case 'i':
 				format_int(list, printed);
@@ -69,6 +69,9 @@ void format_values(va_list list, const char *format, int *printed, int *count)
 			num = va_arg(list, unsigned int);
 			tooc = _tobinoct(num, 0, 8);
 			*printed += tooc;
+			break;
+		case 'r':
+			format_string(list, printed, 'r');
 			break;
 		default:
 			*count += 1;
@@ -100,20 +103,25 @@ void format_int(va_list list, int *printed)
  * @printed: pointer to amount of printed chars
  * Return: void
  */
-void format_string(va_list list, int *printed)
+void format_string(va_list list, int *printed, char sr)
 {
 	char *s;
-
 	s = va_arg(list, char *);
 
 	if (s)
 	{
 		*printed += _strlen(s);
-		_puts(s);
+		if (sr == 's')
+			_puts(s);
+		else
+			_printstr(s);
 	}
 	else
 	{
 		*printed += _strlen("(null)");
-		_puts("(null)");
+		if (sr == 's')
+			_puts("(null)");
+		else
+			_printstr("(null)");
 	}
 }
