@@ -14,7 +14,7 @@ int main(void)
 	printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');**/
 
 	int n = _printf("%x\n", 10);
-	int m = _printf("%x\n", 10);
+	int m = printf("%x\n", 10);
 
 	printf("%d, %d\n", n, m);
 

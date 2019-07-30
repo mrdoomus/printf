@@ -57,9 +57,9 @@ void format_values(va_list list, const char *format, int *printed, int *count)
 		case 's':
 			format_string(list, printed, 's');
 			break;
-		case 'd': case 'i':
-				format_int(list, printed);
-				break;
+		case 'd': case 'i': case 'u':
+					format_int(list, printed);
+					break;
 		case 'b':
 			num = va_arg(list, unsigned int);
 			tobi = _tobinoct(num, 0, 2);
