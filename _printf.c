@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
  */
 void format_values(va_list list, const char *format, int *printed, int *count)
 {
-	int f = 0, tobi = 0;
+	int f = 0, tobi = 0, tooc = 0;
 	unsigned int num = 0;
 
 	switch (format[*count + 1])
@@ -64,6 +64,11 @@ void format_values(va_list list, const char *format, int *printed, int *count)
 			num = va_arg(list, unsigned int);
 			tobi = _tobin(num, 0);
 			*printed  += tobi;
+			break;
+		case 'o':
+			num = va_arg(list, unsigned int);
+			tooc = _tooct(num, 0);
+			*printed += tooc;
 			break;
 		default:
 			*count += 1;

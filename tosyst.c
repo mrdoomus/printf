@@ -17,3 +17,22 @@ int _tobin(unsigned int n, int m)
 	_putchar(n % 2 + '0');
 	return (m);
 }
+
+/**
+ * _tooct - Converts an int to octal
+ * @n: Passed number
+ * @m: counter
+ * Return: Returns number of digits
+**/
+int _tooct(unsigned int n, int m)
+{
+	if (n < 8)
+	{
+		_putchar(n + '0');
+		return (1);
+	}
+
+	m = _tooct(n / 8, m + 1) + 1;
+	_putchar(n % 8 + '0');
+	return (m);
+}
