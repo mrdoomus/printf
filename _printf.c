@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
  */
 void format_values(va_list list, const char *format, int *printed, int *count)
 {
-	int f = 0, tobi = 0, tooc = 0;
+	int f = 0, tobi = 0, tooc = 0, tohex = 0;
 	unsigned int num = 0;
 
 	switch (format[*count + 1])
@@ -72,6 +72,16 @@ void format_values(va_list list, const char *format, int *printed, int *count)
 			break;
 		case 'r':
 			format_string(list, printed, 'r');
+			break;
+		case 'x' :
+			num = va_arg(list, unsigned int);
+			tohex = _tohex(num, 0, 'x');
+			*printed += tohex;
+			break;
+		case 'X':
+			num = va_arg(list, unsigned int);
+			tohex = _tohex(num, 0, 'X');
+			*printed += tohex;
 			break;
 		default:
 			*count += 1;
