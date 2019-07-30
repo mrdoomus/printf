@@ -13,7 +13,7 @@ int main(void)
 	/**_printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');
 	printf("This is a test: %z - %% - % - % c - \\ - \" - \' - %\n", 'A');**/
 
-	int n = _printf("%b\n", 7);
+	int n = _printf("%b\n", (unsigned int)INT_MAX + 1024);
 	int m = printf("a\n");
 
 	printf("%d, %d\n", n, m);
