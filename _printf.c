@@ -62,12 +62,12 @@ void format_values(va_list list, const char *format, int *printed, int *count)
 				break;
 		case 'b':
 			num = va_arg(list, unsigned int);
-			tobi = _tobin(num, 0);
+			tobi = _tobinoct(num, 0, 2);
 			*printed  += tobi;
 			break;
 		case 'o':
 			num = va_arg(list, unsigned int);
-			tooc = _tooct(num, 0);
+			tooc = _tobinoct(num, 0, 8);
 			*printed += tooc;
 			break;
 		default:
