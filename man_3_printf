@@ -27,6 +27,26 @@ If no l modifier is present: the const char * argument is expected to be a point
 .B %
 .br
 A '%' is written.  No argument is converted.  The complete conversion specification is '%%'.
+
+.B b
+.br
+The int argument is converted no binary numbers. The range of this format can go from INT_MIN to INT_MAX on unsigned both.
+
+.B u
+.br
+The int argument is converted to unsigned int.
+
+.B o
+.br
+The unsigned int argument is converted to octal notaion.
+
+.B x X
+.br
+The unsigned int argument is converted to hex notaion when lowercase 'x' is passed on format, the unsigned int argument is converted to hex notaion when uppercase 'X' is passed on format.
+
+.B r
+.br
+The char * argument is reversed and then printed out.
 .SH SEE ALSO
 printf(1), holbertonschool(2), cprogramming(2).
 .SH BUGS
